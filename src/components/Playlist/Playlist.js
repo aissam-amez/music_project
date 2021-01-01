@@ -3,7 +3,7 @@ import './Playlist.css'
 import TrackList from '../TrackList/TrackList'
 
 const Playlist = (props) => {
-	const {palylistTracks, onRemove, updateName, playlistName} = props
+	const {onSave, palylistTracks, onRemove, updateName, playlistName} = props
 
 	const changeName = (e) =>{
 		updateName(e.target.value)
@@ -13,7 +13,7 @@ const Playlist = (props) => {
 		<div className="Playlist">
 			<input type="text" value={playlistName} onChange={changeName} />
 			<TrackList list={palylistTracks} onRemove={onRemove} isRemoval='true' />
-			<button className="Playlist-save">SAVE TO SPOTIFY</button>
+			<button className="Playlist-save" onClick={onSave} >SAVE TO SPOTIFY</button>
 		</div>
 	)
 }
